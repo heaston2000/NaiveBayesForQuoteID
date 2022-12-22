@@ -1,0 +1,124 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww24620\viewh15420\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \ul \ulc0 Project Diary 
+\f1\b0 \ulnone \
+\ul 11/27 - Project Start!\
+\ulnone 11:00 AM - 12:00 PM\ul \
+
+\f0\b \ulnone - 
+\f1\b0 Goals: Find data set for training the models.\
+- Progress: Still haven\'92t found a suitable dataset for code-switching\
+1:00 -2:00 PM\
+- Goals: Keep looking for suitable dataset\
+- Progress: Found an open repository for public books, downloaded the King James Bible, maybe I can do something with this\
+2:00 - 3:00 PM\
+- Goals: Look into POS tagging for raw text\
+- Progress: I think it would be too hard to tag parts of speech given raw text with no training data and not using a model that someone else has already made; going to try to pursue different topics, might change idea to being predicting what bible verse a particular passage is from using Naive Bayes.\
+\ul 11/28\ulnone \
+1:00 - 12:00 PM\
+- Goals: Load and preprocess Bible data into Python\
+- Progress: Decided to not do Bible verse prediction since that would be too boring, going to instead try to predict the character speaking at a point in time, I have downloaded Dr. Jekyll and Mr. Hyde, as an example to start on.\
+2:00 PM - 3:00 PM\
+- Goals: Load in the Dr. Jekyll and Mr. Hyde book and isolate quote to characters\
+- Progress: Book is loaded and began to be preprocessed by replacing all the arbitrary paragraph breaks that were in the text file.\
+3:00-4:00 PM\
+- Goals: Identify quotes and speakers in Dr. Jekyll and Mr. Hyde\
+- Progress: All quotes have been taken out of the text using regular expressions, now just need to identify speakers\
+8:00 - 9:00 PM\
+- Goals: Identify speakers\
+- Progress: Speakers are still having difficulty being identified, can\'92t find a good way to tell if something is a proper noun or not, although have started to look on either side of the quote for the speaker\'92s name. I have started on project progress report which I realized I need to do.\
+9:00 - 10:00 PM\
+- Goals: Finish progress report (excluding progress section)\
+- Progress: Progress report finished, but progress report section, quotes are pretty much identified, just need to store in a good data structure.\
+10:00 - 11:00 PM\
+- Goals: Store speaker, quote pairs and start on the NB classifier\
+- Progress: Speaker and quotes are stored in a dictionary, created new .py file for the NB classifier and copy-pasted everything from the one we did in class.\
+\ul 11/29\
+\ulnone 12:00 - 1 PM\
+Goals: Finish and submit progress report.\
+Progress: Done! Also started work changing the NB classifier over, initiation function pretty much done.\
+\ul 12/1\
+\ulnone 8:00 - 9:00 PM\
+Goals: Finish addExample function in the Naive Bayes classifier\
+Progress: AddExample function done. \
+\ul 12/5\
+\ulnone 3:00 - 4:00 PM\
+Goals: Finish predict function for the NaiveBayes classifier\
+Progress: Found that the addExample function is not correctly counting speaker, word pairs or the number of correct words, predict function is started\
+5:00 - 6:00 PM\
+Goals: Fix flaws with addExample function and implement predict function\
+Progress: example function is fixed, but still working on predict function\
+8:00 - 9:00 PM\
+Goals: Finish implementing predict function\
+Progress: Predict function is implemented, just need to find a way to test the model, but it is outputting probabilties correctly\
+\ul 12/6\ulnone \
+9:00 - 10:00 PM\
+- Goals: Add tests to see how well the model is doing.\
+- Progress: Decided to change data structure holding quotes to pandas data frame instead of dictionary for easier manipulation.\
+10:00 - 11:00 PM\
+- Goals: Complete the \'93NaiveBayes\'94 class purely in pandas.\
+- Progress: Almost done changing everything to pandas, had to work through a couple of errors\
+\ul 12/7\
+\ulnone 9:00 - 10:00 PM\
+- Goals: Finish implementing in terms of pandas data frames\
+- Progress: So close to finishing the pandas data frame crossover\
+10:00 - 11:00 PM\
+- Goals: Third time\'92s the charm!!\
+- Progress: Finally got pandas working then realized it was a terrible idea and increased my runtime by a bunch, got test/train split working, and oh boy! Test set accuracy is 
+\f0\b \ul 0!!!!
+\f1\b0 \ulnone  Need to do something to fix this.\
+11:00 - 12:00 PM\
+- Goals: Fix that accuracy! I will start introducing the characters themselves to the model.\
+- Progress: Added more features and introduced characters so that quote ID could only ID characters speaking, but still no progress on testing accuracy!\
+\ul 12/8
+\f0\b \
+
+\f1\b0 \ulnone 1:00-2:00 PM \
+- Goals: Office Hours! Figure out what is going wrong with the test accuracy.\
+- Progress: Success! Now, data is being split up correctly but testing and training accuracy are still low.\
+2:00-300 PM\
+- Goals: Improve Quote Loader to better attribute quotes. If time add more features to the NB classifier.\
+- Progress: Quote loader is now attributing quotes based on what each quote\'92s past speaker was, this needs to be honed a bit but almost there.\
+\ul 12/10\
+\ulnone 1:00-2:00PM\
+- Goals: Something is not quite correct with the way I am changing quote from data frame to dictionary\
+- Progress: Fixed that issue! Now testing accuracy is around 0.3!\
+2:00-3:00 PM\
+- Goals: Add average word length as a feature to improve the NB classifier of the quotes\
+- Progress: Still implementing average word length\
+3:00-4:00 PM\
+- Goals: Finally implement average word length\
+- Progress: Average word length is implemented, doesn\'92t help accuracy that much\
+4:00-5:00 PM\
+- Goals: Trying to use the NB on different books now\
+- Progress: Uploaded The Great Gatsby, with an accuracy of around 0.30\
+\ul 12/11\
+\ulnone 11:00 AM - 12:00 PM\
+- Goals: Implement apostrophe counts as a feature\
+- Progress: Apostrophe length has been implemented\
+3:00 - 4:00 PM\
+- Goals: Add even more books in\
+- Progress: Added Little Women and Pride and Prejudice as options\
+4:00-5:00 PM\
+- Goals: Begin on poster, find a way to visualize results\
+- Progress: Starting to visualize results using matplotlib\
+5:00 - 6:00 PM\
+- Goals: Get working code to visualize what words uniquely identify someone using matplotlib\
+- Progress: matplotlib visualization working\
+9:00-10:00 PM\
+- Goals: Get results! To put on poster\
+- Progress: Done some work on poster\
+10:00-11:00 PM\
+- Goals: Finish poster\
+- Progress: Done everything but the results section on poster\
+11:00 PM - 12:00 AM\
+- Goals: Finish poster still! In the meantime comment and polish code\
+- Progress: Poster finished!\
+12:00 - 1:00 AM\
+- Goals: Comment code\
+- Progress: Code commented! Everything is all set pretty much just gonna make a couple tweaks tomorrow}
